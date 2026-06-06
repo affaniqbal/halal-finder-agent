@@ -10,7 +10,6 @@ You ask a question in plain English. The agent decides which tools to call, call
 python3 main.py "halal Turkish near Shoreditch"
 ```
 
-![Example output showing restaurant cards with halal status badges](docs/example.png)
 
 ## How it works — the agent loop
 
