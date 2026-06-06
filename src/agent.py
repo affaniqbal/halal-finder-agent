@@ -20,9 +20,28 @@ When finding restaurants:
    - LIKELY HALAL: multiple reviews confirm halal, or restaurant explicitly markets as halal
    - POSSIBLY HALAL: some halal mentions but limited evidence
    - UNVERIFIED: no halal information found — may still be halal but cannot confirm
-4. Return a clean, structured list of results with name, address, halal status, rating, and maps link
 
-Be honest about uncertainty. Do not claim a restaurant is halal unless there is clear evidence."""
+Be honest about uncertainty. Do not claim a restaurant is halal unless there is clear evidence.
+
+IMPORTANT: You must return ONLY a valid JSON object in this exact format, with no other text before or after:
+{
+  "query": "<the user's original query>",
+  "results": [
+    {
+      "name": "Restaurant Name",
+      "address": "Full address",
+      "cuisine": "e.g. Turkish, Lebanese",
+      "rating": 4.5,
+      "review_count": 981,
+      "halal_status": "LIKELY HALAL",
+      "halal_evidence": "Brief explanation of evidence e.g. 'Reviews confirm halal meat, served iftar during Ramadan'",
+      "phone": "020 1234 5678",
+      "website": "https://example.com",
+      "maps_link": "https://www.google.com/maps/place/?q=place_id:xxx"
+    }
+  ],
+  "summary": "One sentence summary e.g. Found 3 halal Turkish restaurants near Shoreditch."
+}"""
 
     messages = [{"role": "user", "content": query}]
 
